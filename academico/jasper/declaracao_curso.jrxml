@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="declaracao_curso"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="ALNCODG" isForPrompting="true" class="java.lang.Integer"/>
+	<parameter name="IMG_FUNDO" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["C:\\Documents and Settings\\DEDE\\Desktop\\Nova pasta (5)\\fundo.jpg"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IMG_LOGO" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["C:\\Documents and Settings\\DEDE\\Desktop\\Nova pasta (5)\\logo.jpg"]]></defaultValueExpression>
+	</parameter>
+	<queryString><![CDATA[SELECT
+   ALNCODG,
+   ALCNOME,
+   ALCCPF,
+   ALCSEXO,
+   ALDNASC,
+   ALNCDNC,
+   ALBFOTO,
+   ALCPAI,
+   ALCMAE,
+   ALNCGEC,
+   ALCRG,
+   ALCOERG,
+   ALCUFRG,
+   ALCTIEL,
+   ALCZOTE,
+   ALCSETE,
+   ALDDETE,
+   ALNCGRL,
+   ALCNACI,
+   ALCIESG,
+   ALCFONE,
+   ALCCELL,
+   ALNCGTL,
+   ALCLOGR,
+   ALNCDED,
+   ALCCOMP,
+   ALCCEP,
+   ALCBAIR,
+   ALDCADT,
+   ALLATIV,
+   CSCDESC
+ FROM
+   MATRICULASEMESTRE INNER JOIN SEMESTRE ON
+MSNCGSM = SMNCODG
+LEFT JOIN MATRICULA ON
+MSNCGMT =MTNCODG
+LEFT JOIN ALUNO ON
+MTNCGAL = ALNCODG
+LEFT JOIN CURSO ON
+MTNCGCS = CSNCODG
+WHERE
+'NOW' BETWEEN SEMESTRE.SMDABER AND SEMESTRE.SMDFECH
+AND ALNCODG = $P{ALNCODG}]]></queryString>
+
+	<field name="ALNCODG" class="java.lang.Integer"/>
+	<field name="ALCNOME" class="java.lang.String"/>
+	<field name="ALCCPF" class="java.lang.String"/>
+	<field name="ALCSEXO" class="java.lang.String"/>
+	<field name="ALDNASC" class="java.sql.Date"/>
+	<field name="ALNCDNC" class="java.lang.Integer"/>
+	<field name="ALBFOTO" class="java.lang.Object"/>
+	<field name="ALCPAI" class="java.lang.String"/>
+	<field name="ALCMAE" class="java.lang.String"/>
+	<field name="ALNCGEC" class="java.lang.Integer"/>
+	<field name="ALCRG" class="java.lang.String"/>
+	<field name="ALCOERG" class="java.lang.String"/>
+	<field name="ALCUFRG" class="java.lang.String"/>
+	<field name="ALCTIEL" class="java.lang.String"/>
+	<field name="ALCZOTE" class="java.lang.String"/>
+	<field name="ALCSETE" class="java.lang.String"/>
+	<field name="ALDDETE" class="java.sql.Date"/>
+	<field name="ALNCGRL" class="java.lang.Integer"/>
+	<field name="ALCNACI" class="java.lang.String"/>
+	<field name="ALCIESG" class="java.lang.String"/>
+	<field name="ALCFONE" class="java.lang.String"/>
+	<field name="ALCCELL" class="java.lang.String"/>
+	<field name="ALNCGTL" class="java.lang.Integer"/>
+	<field name="ALCLOGR" class="java.lang.String"/>
+	<field name="ALNCDED" class="java.lang.Integer"/>
+	<field name="ALCCOMP" class="java.lang.String"/>
+	<field name="ALCCEP" class="java.lang.String"/>
+	<field name="ALCBAIR" class="java.lang.String"/>
+	<field name="ALDCADT" class="java.sql.Timestamp"/>
+	<field name="ALLATIV" class="java.lang.String"/>
+	<field name="CSCDESC" class="java.lang.String"/>
+
+		<background>
+			<band height="715"  isSplitAllowed="true" >
+				<image  scaleImage="RetainShape" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="183"
+						width="516"
+						height="500"
+						key="image-1"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA[$P{IMG_FUNDO}]]></imageExpression>
+				</image>
+			</band>
+		</background>
+		<title>
+			<band height="257"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="150"
+						y="72"
+						width="308"
+						height="56"
+						key="staticText-1"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center">
+						<font/>
+					</textElement>
+				<text><![CDATA[CNPJ: 09.072686/0001-09
+END: RUA CEL. JOÃO EVANGELISTA Nº 24, CENTRO
+CEP: 48903500. JUAZEIRO - BA
+FONE: (74) 3612-1791
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="120"
+						y="15"
+						width="363"
+						height="47"
+						key="staticText-2"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="16" isBold="true"/>
+					</textElement>
+				<text><![CDATA[INSTITUTO DE ENSINO SUPERIOR LIVRE DO VALE DO SÃO FRANCISCO]]></text>
+				</staticText>
+				<image  scaleImage="RetainShape" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="2"
+						y="8"
+						width="114"
+						height="119"
+						key="image-2"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA[$P{IMG_LOGO}]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement
+						x="205"
+						y="157"
+						width="163"
+						height="31"
+						key="staticText-3"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="18" isBold="true"/>
+					</textElement>
+				<text><![CDATA[DECLARAÇÃO]]></text>
+				</staticText>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="294"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3"
+						y="9"
+						width="498"
+						height="265"
+						key="textField-1"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Justified" lineSpacing="Double">
+						<font pdfFontName="Helvetica" size="14" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["                              Declaramos para os devidos fins de direito que " +($F{ALCSEXO}.equals( "M" )? "o" : "a")+ 
+" Sr" +($F{ALCSEXO}.equals( "M" )? "" : "a")+
+" "+ $F{ALCNOME} + ", portadora do RG "+
+$F{ALCRG}+" " +
+$F{ALCOERG}+ "/"+
+$F{ALCUFRG} +
+" e CPF, " +
+$F{ALCCPF} +
+" filh" +($F{ALCSEXO}.equals( "M" )? "o" : "a")+ 
+" de " +
+$F{ALCPAI} +
+" e  " +
+$F{ALCMAE} +
+", está cursando suas atividades acadêmicas no Curso Livre de "+
+$F{CSCDESC} +
+", habilitação em gestão escolar e docência, de acordo o parecer CNE/CES 0063/2004, que por meio do Decreto-Lei nº 1.051, de 21 de outubro de 1969, autoriza o aproveitamento de estudos em cursos de licenciatura."]]></textFieldExpression>
+				</textField>
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="94"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" pattern="'Juazeiro-BA,' dd 'de' MMMMM 'de' yyyy" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="183"
+						y="11"
+						width="205"
+						height="18"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="205"
+						y="53"
+						width="148"
+						height="17"
+						key="staticText-4"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Atenciosamente,]]></text>
+				</staticText>
+			</band>
+		</summary>
+</jasperReport>

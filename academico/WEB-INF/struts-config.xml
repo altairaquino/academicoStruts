@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+
+  <form-beans>
+  
+  	<form-bean name="formLogin" type="br.com.falconsistemas.academico.struts.form.FormLogin"/>
+  	<form-bean name="formSemestre" type="br.com.falconsistemas.academico.struts.form.FormSemestre"/>
+  	<form-bean name="formCursoSemestre" type="br.com.falconsistemas.academico.struts.form.FormCursoSemestre"/>
+  	<form-bean name="formParcelaCursoSemestre" type="br.com.falconsistemas.academico.struts.form.FormParcelaCursoSemestre"/>
+  	<form-bean name="formUsuario" type="br.com.falconsistemas.academico.struts.form.FormUsuario"/>
+  	<form-bean name="formAluno" type="br.com.falconsistemas.academico.struts.form.FormAluno"/>
+  	<form-bean name="formBoleto" type="br.com.falconsistemas.academico.struts.form.FormBoleto"/>
+  	<form-bean name="formMatricula" type="br.com.falconsistemas.academico.struts.form.FormMatricula"/>
+  	<form-bean name="formMatriculaTurma" type="br.com.falconsistemas.academico.struts.form.FormMatriculaTurma"/>
+  	<form-bean name="formTurma" type="br.com.falconsistemas.academico.struts.form.FormTurma"/>
+  	<form-bean name="formProfessor" type="br.com.falconsistemas.academico.struts.form.FormProfessor"/>
+  	<form-bean name="formMatriculaModulo" type="br.com.falconsistemas.academico.struts.form.FormMatriculaModulo"/>
+  
+  </form-beans>
+  
+  
+  <global-exceptions>
+  </global-exceptions>
+  <global-forwards>
+  </global-forwards>
+  
+  
+  <action-mappings>
+  
+  	<action path="/home" forward="/pages/home.jsp"/>
+  	<action path="/logout" forward="/actionLogin.do?m=logout"/>
+  	<action path="/login" forward="/pages/login.jsp"/>
+  	
+  	<action path="/professorCadastro" forward="/pages/professorCadastro.jsp"/>
+  	
+  	<action path="/alunoCadastro" forward="/pages/alunoCadastro.jsp"/>
+  	<action path="/alunoCadastroSucesso" forward="/pages/alunoCadastroSucesso.jsp"/>
+  	<action path="/alunoDados" forward="/pages/alunoDados.jsp"/>
+  	<action path="/alunoEditar" forward="/pages/alunoEditar.jsp"/>
+  	
+  	<action path="/matriculaAluno" forward="/pages/matriculaAluno.jsp"/>
+  	<action path="/matriculaSucesso" forward="/pages/matriculaSucesso.jsp"/>
+  	<action path="/matriculaPage" forward="/pages/matriculaPage.jsp"/>
+  	
+  	<action path="/matriculaTurmaLista" forward="/pages/matriculaTurmaLista.jsp"/>
+  	<action path="/matriculaTurmaListaSemestre" forward="/pages/matriculaTurmaListaSemestre.jsp"/>
+  	<action path="/matriculaTurmaAlunoLista" forward="/pages/matriculaTurmaAlunoLista.jsp"/>
+  	
+  	<action path="/matriculaModuloNovo" forward="/pages/matriculaModuloNovo.jsp"/>  	
+  	
+  	<action path="/alunoPesquisaBoleto" forward="/pages/alunoPesquisaBoleto.jsp"/>
+  	<action path="/alunoPesquisaMatricula" forward="/pages/alunoPesquisaMatricula.jsp"/>
+  	<action path="/alunoPesquisaMatriculaModulo" forward="/pages/alunoPesquisaMatriculaModulo.jsp"/>
+  	<action path="/alunoPesquisaInsereDisciplina" forward="/pages/alunoPesquisaInsereDisciplina.jsp"/>
+  	<action path="/alunoPesquisaDados" forward="/pages/alunoPesquisaDados.jsp"/>
+  	<action path="/alunoPesquisaNota" forward="/pages/alunoPesquisaNota.jsp"/>
+  	<action path="/alunoPesquisaDoc" forward="/pages/alunoPesquisaDoc.jsp"/>
+  	<action path="/alunoDoc" forward="/pages/alunoDoc.jsp"/>
+  	  	
+  	<action path="/boletoAlunoLista" forward="/pages/boletoAlunoLista.jsp"/>
+  	<action path="/boletoBaixa" forward="/pages/boletoBaixa.jsp"/>
+  	<action path="/boletoBaixa2" forward="/pages/boletoBaixa2.jsp"/>
+  	<action path="/boletoPesquisa" forward="/pages/boletoPesquisa.jsp"/>
+  	<action path="/boletoEditar" forward="/pages/boletoEditar.jsp"/>
+  	<action path="/gerarCarneAlunos" forward="/pages/gerarCarneAlunos.jsp"/>
+  	  	
+  	<action path="/usuarioAlteraSenha" forward="/pages/usuarioAlteraSenha.jsp"/>
+  	  	
+  	<action path="/semestreLista" forward="/pages/semestreLista.jsp"/>
+  	<action path="/semestrePage" forward="/pages/semestrePage.jsp"/>
+  	
+  	<action path="/cursoSemestreLista" forward="/pages/cursoSemestreLista.jsp"/>
+  	<action path="/cursoSemestreListaAlunos" forward="/pages/cursoSemestreListaAlunos.jsp"/>
+  	<action path="/cursoSemestrePage" forward="/pages/cursoSemestrePage.jsp"/>
+  	<action path="/cursoSemestreNovo" forward="/pages/cursoSemestreNovo.jsp"/>
+  	<action path="/cursoSemestreEditar" forward="/pages/cursoSemestreEditar.jsp"/>
+  	
+  	<action path="/parcelaCursoSemestreLista" forward="/pages/parcelaCursoSemestreLista.jsp"/>
+  	<action path="/parcelaCursoSemestreEditar" forward="/pages/parcelaCursoSemestreEditar.jsp"/>
+  	<action path="/parcelaCursoSemestreNovo" forward="/pages/parcelaCursoSemestreNovo.jsp"/>
+  	
+  	<action path="/turmaLista" forward="/pages/turmaLista.jsp"/>
+  	<action path="/turmaEditar" forward="/pages/turmaEditar.jsp"/>
+  	<action path="/turmaNova" forward="/pages/turmaNova.jsp"/>
+  	<action path="/turmaAlunos" forward="/pages/turmaAlunos.jsp"/>
+  	
+  	<action path="/actionMatriculaModulo"
+  			type="br.com.falconsistemas.academico.struts.action.ActionMatriculaModulo"
+  			parameter="m"
+  			name="formMatriculaModulo">  	
+  	</action>
+  	
+  	<action path="/actionLogin"
+  	        type="br.com.falconsistemas.academico.struts.action.ActionLogin" 
+  	        parameter="m"
+  	        name="formLogin">
+  	</action>
+  	
+  	<action path="/actionUsuario"
+  	        type="br.com.falconsistemas.academico.struts.action.ActionUsuario"
+  	        parameter="m"
+  	        name="formUsuario">
+  	</action>
+  	
+  	<action path="/actionProfessor"
+  	        type="br.com.falconsistemas.academico.struts.action.ActionProfessor"
+  	        parameter="m"
+  	        name="formProfessor">
+  	</action>
+  	
+  	<action path="/actionAluno"
+  	        type="br.com.falconsistemas.academico.struts.action.ActionAluno"
+  	        parameter="m"
+  	        name="formAluno">
+  	</action>
+  	
+  	<action path="/actionSemestre"
+  	        type="br.com.falconsistemas.academico.struts.action.ActionSemestre" 
+  	        parameter="m"
+  	        name="formSemestre">
+  	</action>
+  	
+  	<action path="/actionMatricula"
+  	        type="br.com.falconsistemas.academico.struts.action.ActionMatricula" 
+  	        parameter="m"
+  	        name="formMatricula">
+  	</action>
+  	
+  	<action path="/actionMatriculaTurma"
+  	        type="br.com.falconsistemas.academico.struts.action.ActionMatriculaTurma" 
+  	        parameter="m"
+  	        name="formMatriculaTurma">
+  	</action>
+  	
+  	<action path="/actionBoleto"
+  	        type="br.com.falconsistemas.academico.struts.action.ActionBoleto" 
+  	        parameter="m"
+  	        name="formBoleto">
+  	</action>
+  	
+  	<action path="/actionCursoSemestre"
+  	        type="br.com.falconsistemas.academico.struts.action.ActionCursoSemestre" 
+  	        parameter="m"
+  	        name="formCursoSemestre">
+  	</action>
+  	
+  	<action path="/actionParcelaCursoSemestre"
+  	        type="br.com.falconsistemas.academico.struts.action.ActionParcelaCursoSemestre" 
+  	        parameter="m"
+  	        name="formParcelaCursoSemestre">
+  	</action>
+  	
+  	<action path="/actionTurma"
+  	        type="br.com.falconsistemas.academico.struts.action.ActionTurma"
+  	        parameter="m"
+  	        name="formTurma">
+  	</action>
+  	
+  </action-mappings>
+  
+  
+  
+  <message-resources parameter="Messages"/>
+  
+</struts-config>

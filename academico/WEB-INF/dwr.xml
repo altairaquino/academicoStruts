@@ -1,0 +1,7 @@
+<dwr>
+	<allow>
+		<create creator="static" javascript="Mapping">
+			<param name="class" value="br.com.falconsistemas.academico.dwr.DwrMapping"/>
+		</create>		
+	</allow>
+</dwr>
